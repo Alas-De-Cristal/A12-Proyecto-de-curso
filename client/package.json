@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Alas-De-Cristal.github.io/A12-Proyecto-de-curso",
+  "homepage": "https://Alas-De-Cristal.github.io/A12-Proyecto",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
