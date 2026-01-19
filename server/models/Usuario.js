@@ -10,11 +10,16 @@ const UsuarioSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        trim: true
+        trim: true,
+        lowercase: true
+    },
+    password: {
+        type: String,
+        required: true
     },
     rol: {
         type: String,
-        enum: ['Administrador', 'Voluntario'],
+        enum: ['Admin', 'Voluntario'],
         default: 'Voluntario'
     },
     fechaRegistro: {
@@ -23,5 +28,5 @@ const UsuarioSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Usuario', UsuarioSchema);
-
+// Esta línea es vital para evitar errores de "OverwriteModelError" al reiniciar el servidor
+module.exports = mongoose.models.Usuario || mongoose.model('Usuario', UsuarioSchema);
